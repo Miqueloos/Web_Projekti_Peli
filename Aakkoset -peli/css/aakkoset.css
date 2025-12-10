@@ -1,0 +1,75 @@
+/* styles.css — Pelin omat tyylit */
+
+.game-container {
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 20px;
+    background: #222;
+    border-radius: 12px;
+    max-width: 900px;
+    border: 3px solid #ffde6e;
+}
+
+.letters, .slots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.tile {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    color: #000;
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.slot {
+    width: 60px;
+    height: 60px;
+    border: 2px dashed #ffde6e;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.slot.filled {
+    background: #fff;
+    color: #000;
+    border-style: solid;
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.controls button {
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #ffde6e;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
