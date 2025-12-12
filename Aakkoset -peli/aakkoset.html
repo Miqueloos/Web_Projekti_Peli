@@ -6,7 +6,7 @@
     <title>Tiimi 3 -pelit</title>
     <link rel="stylesheet" href="/Aakkoset -peli/css/styles.css" />
     <link rel="stylesheet" href="/Aakkoset -peli/css/aakkoset.css" />
-    <script src="aakkoset.js" defer></script>
+    <script src="/Aakkoset -peli/javascript/aakkoset.js" defer></script>
 </head>
 <body>
 
@@ -23,7 +23,7 @@
             <div class="dropdown-content">
 
                 <!-- Linkataan omat pelit # -paikalle  -->
-                <a href="#">Aakkoset järjestykseen</a>
+                <a href="/Aakkoset -peli/aakkoset.html">Aakkoset järjestykseen</a>
                 <a href="#">Englannin alkeita</a>
                 <a href="#">Matikka -peli</a>
                 <a href="#">Mitä kello on?</a>
@@ -32,13 +32,21 @@
         </div>
     </header>
 
-    <main class="content">
-        <h1>Aakkoset järjestykseen</h1>
-        <br>
-        <p> plaa plaa 
-        <br>
-        </div>
-    </main>
+<main class="content">
+<h1>Aakkoset järjestykseen</h1>
+<p>Järjestä kirjaimet oikeaan aakkosjärjestykseen! Klikkaa kirjainta ja aseta se tyhjään laatikkoon.</p>
+<div class="game-container">
+<div class="controls">
+<button id="checkOrder">Tarkista</button>
+<button id="newGame">Uusi peli</button>
+</div>
+
+
+<div class="letters" id="letters"></div>
+<div class="slots" id="slots"></div>
+<div id="message"></div>
+</div>
+</main>
 
     <!-- Footer -->
 
