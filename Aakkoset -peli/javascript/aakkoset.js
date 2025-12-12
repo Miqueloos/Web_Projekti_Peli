@@ -1,5 +1,5 @@
 
-// Listataan aakkoset ja pilkotaan taulukoksi
+// Listataan aakkoset
 
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ".split("");
 
@@ -54,13 +54,12 @@ if (!letter) return;
     tile.onclick = () => placeLetter(i);
     lettersEl.appendChild(tile);
 });
-
 placed.forEach((letter, i) => {
-    const slot = document.createElement("div");
-    slot.className = "slot" + (letter ? " filled" : "");
-    slot.textContent = letter ? letter : "";
-    slot.onclick = () => removeLetter(i);
-    slotsEl.appendChild(slot);
+const slot = document.createElement("div");
+slot.className = "slot" + (letter ? " filled" : "");
+slot.textContent = letter ? letter : "";
+slot.onclick = () => removeLetter(i);
+slotsEl.appendChild(slot);
 });
 }
 
@@ -80,9 +79,8 @@ shuffled[index] = null;
 // Poistaa kirjaimen valitusta paikasta ja palauttaa sen valittavissa oleviin kirjaimiin
 
 function removeLetter(slotIndex) {
-    const letter = placed[slotIndex];
-    if (!letter) return;
-
+const letter = placed[slotIndex];
+if (!letter) return;
     const freeIndex = shuffled.indexOf(null);
     if (freeIndex !== -1) shuffled[freeIndex] = letter;
     else shuffled.push(letter);
@@ -91,15 +89,20 @@ function removeLetter(slotIndex) {
     render();
 }
 
-// Tarkistetaan pelaajan antama järjestys ja annetaan viestit suorituksesta (kesken, oikein, väärin)
+// Tarkistetaan pelaajan antama järjestys ja annetaan viestit suorituksesta (kesken, oikein, väärin) (huomioitu myös ÅÄÖ -kirjaimet)
 
 function checkOrder() {
-const correct = [...chosen].sort();
+
+const correct = [...chosen].sort((a,b) =>
+a.localeCompare(b, "fi")
+);
+
 if (placed.includes(null)) {
 message.textContent = "Valitse kaikkiin laatikoihin kirjaimet ennen tarkistusta!";
 message.style.color = "orange";
 return;
 }
+
 // Viestit
 if (placed.join("") === correct.join("")) {
 message.textContent = "Hyvä, järjestit kirjaimet oikein, hienoa! :) ";

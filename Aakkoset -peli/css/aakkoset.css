@@ -37,6 +37,25 @@ border-radius: 8px;
     cursor: pointer;
 }
 
+/* Valintaslottien ulkoasu */
+
+.slot {
+width: 60px;
+height: 60px;
+border: 2px dashed #008a00;
+border-radius: 8px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 26px;
+font-weight: bold;
+}
+
+.slot.filled {
+background: #fff;
+color: #000;
+border-style: solid;
+}
 
 /* Nappuloiden ulkoasu */
 
