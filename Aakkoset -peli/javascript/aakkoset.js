@@ -1,12 +1,21 @@
+
+// Listataan aakkoset ja pilkotaan taulukoksi
+
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ".split("");
+
+// Valitaan aakkoset satunnaisessa järjestyksessä
 
 let chosen = [];
 let shuffled = [];
 let placed = [];
 
+// Haetaan HTML:stä elementit, joihin kirjaimet ja viestit tulee
+
 const lettersEl = document.getElementById("letters");
 const slotsEl = document.getElementById("slots");
 const message = document.getElementById("message");
+
+// Satunnaistaa annetun taulukon
 
 function shuffle(arr) {
 for (let i = arr.length - 1; i > 0; i--) {
@@ -15,54 +24,60 @@ const j = Math.floor(Math.random() * (i + 1));
 }
 }
 
+// Uuden pelin aloitus
+
 function startGame() {
 message.textContent = "";
 
-// Valitaan 8 kirjainta
-    chosen = alphabet.slice(0, 29);
-    shuffle(chosen);
+// Valitaan aakkoset ja sekoitetaan ne
+// Piirretään kirjaimet ja paikat
 
-    shuffled = [...chosen];
-    shuffle(shuffled);
-
-    placed = Array(chosen.length).fill(null);
-
-    render();
+chosen = alphabet.slice(0, 29);
+shuffle(chosen);
+shuffled = [...chosen];
+shuffle(shuffled);
+placed = Array(chosen.length).fill(null);
+render();
 }
+
+// Päivitellään pelialue pelaajan edistymisen mukaan
 
 function render() {
-    lettersEl.innerHTML = "";
-    slotsEl.innerHTML = "";
+lettersEl.innerHTML = "";
+slotsEl.innerHTML = "";
+shuffled.forEach((letter, i) => {
 
-    shuffled.forEach((letter, i) => {
-        if (!letter) return;
-        const tile = document.createElement("div");
-        tile.className = "tile";
-        tile.textContent = letter;
-        tile.onclick = () => placeLetter(i);
-        lettersEl.appendChild(tile);
-    });
+if (!letter) return;
+    const tile = document.createElement("div");
+    tile.className = "tile";
+    tile.textContent = letter;
+    tile.onclick = () => placeLetter(i);
+    lettersEl.appendChild(tile);
+});
 
-    placed.forEach((letter, i) => {
-        const slot = document.createElement("div");
-        slot.className = "slot" + (letter ? " filled" : "");
-        slot.textContent = letter ? letter : "";
-        slot.onclick = () => removeLetter(i);
-        slotsEl.appendChild(slot);
-    });
+placed.forEach((letter, i) => {
+    const slot = document.createElement("div");
+    slot.className = "slot" + (letter ? " filled" : "");
+    slot.textContent = letter ? letter : "";
+    slot.onclick = () => removeLetter(i);
+    slotsEl.appendChild(slot);
+});
 }
+
+// Funktio siirtää pelaajan valitseman kirjaimen ensimmäiseen tyhjään paikkaan 1. ruutuun ja päivittää näkymän sitä mukaa
 
 function placeLetter(index) {
-    const letter = shuffled[index];
-    if (!letter) return;
 
-    const firstEmpty = placed.indexOf(null);
-    if (firstEmpty === -1) return;
-
-    placed[firstEmpty] = letter;
-    shuffled[index] = null;
+const letter = shuffled[index];
+if (!letter) return;
+const firstEmpty = placed.indexOf(null);
+if (firstEmpty === -1) return;
+placed[firstEmpty] = letter;
+shuffled[index] = null;
     render();
 }
+
+// Poistaa kirjaimen valitusta paikasta ja palauttaa sen valittavissa oleviin kirjaimiin
 
 function removeLetter(slotIndex) {
     const letter = placed[slotIndex];
@@ -76,23 +91,26 @@ function removeLetter(slotIndex) {
     render();
 }
 
+// Tarkistetaan pelaajan antama järjestys ja annetaan viestit suorituksesta (kesken, oikein, väärin)
+
 function checkOrder() {
-    const correct = [...chosen].sort();
-
-    if (placed.includes(null)) {
-        message.textContent = "Valitse kaikkiin laatikoihin kirjaimet ennen tarkistusta!";
-        message.style.color = "orange";
-        return;
-    }
-
-    if (placed.join("") === correct.join("")) {
-        message.textContent = "Hyvä, järjestit kirjaimet oikein, hienoa! :) ";
-        message.style.color = "lightgreen";
-    } else {
-        message.textContent = "Ei ihan oikein, yritä vielä uudelleen!";
-        message.style.color = "red";
-    }
+const correct = [...chosen].sort();
+if (placed.includes(null)) {
+message.textContent = "Valitse kaikkiin laatikoihin kirjaimet ennen tarkistusta!";
+message.style.color = "orange";
+return;
 }
+// Viestit
+if (placed.join("") === correct.join("")) {
+message.textContent = "Hyvä, järjestit kirjaimet oikein, hienoa! :) ";
+message.style.color = "lightgreen";
+} else {
+message.textContent = "Ei ihan oikein, yritä vielä uudelleen!";
+message.style.color = "red";
+}
+}
+
+// Nämä liittää nappuloihin niiden toiminnot ja käynnistää pelin
 
 document.getElementById("newGame").onclick = startGame;
 document.getElementById("checkOrder").onclick = checkOrder;
