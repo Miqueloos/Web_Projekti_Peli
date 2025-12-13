@@ -1,0 +1,210 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+body{
+  background-image:url("/Elaimentunnistus/images/Tausta.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.header {
+  background-color: #ffde6e;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 40px;
+  padding: 15px;
+  border-bottom: 3px solid white;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: black;
+}
+
+.nav a {
+  margin: 0 25px;
+  text-decoration: underline;
+  color: black;
+  font-weight: bold;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  background-color: #ffde6e;
+  border: 2px solid black;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: rgb(197, 197, 197);
+  border: 2px solid rgb(0, 0, 0);
+  min-width: 180px;
+  z-index: 10;
+}
+
+.dropdown-content a {
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #000000;
+  font-size: 0.95em;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a:hover {
+  text-decoration: underline;
+}
+
+.page {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.game-box {
+  width: 100%;
+  max-width: 980px;
+  background-color: rgba(255, 255, 255, 0.92);
+  border-radius: 22px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+  padding: 28px 22px 30px;
+  text-align: center;
+}
+
+.game-title {
+  margin: 0 0 18px;
+  font-size: 2rem;
+  color: #111;
+}
+
+.animal-row {
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+  flex-wrap: wrap;
+  margin: 18px 0 22px;
+}
+
+.animal-card {
+  width: 220px;
+  text-align: center;
+}
+
+.animal-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
+}
+
+.animal-select {
+  margin-top: 14px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 2px solid #222;
+  font-weight: 600;
+}
+
+.animal-result {
+  margin: 10px 0 0;
+  min-height: 24px;
+  font-weight: 700;
+}
+
+.check-btn {
+  margin-top: 10px;
+  padding: 12px 46px;
+  font-size: 20px;
+  font-weight: 800;
+  border-radius: 999px;
+  border: 2px solid #222;
+  cursor: pointer;
+  background-color: #ffde6e;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+}
+
+.check-btn:hover {
+  background-color: #ffd23f;
+}
+
+.points {
+  margin: 18px 0 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #111;
+}
+
+.summary {
+  margin: 10px 0 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111;
+  min-height: 22px;
+}
+
+.footer {
+  background-color: #ffde6e;
+  padding: 20px;
+  color: black;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-top: 3px solid white;
+  text-align: center;
+  margin-top: auto;
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .nav a {
+    margin: 0 10px;
+    font-size: 0.95em;
+  }
+
+  .dropbtn {
+    padding: 8px 15px;
+    font-size: 0.95em;
+  }
+
+  .game-title {
+    font-size: 1.6rem;
+  }
+
+  .animal-card {
+    width: 240px;
+  }
+
+  .animal-img {
+    width: 210px;
+    height: 210px;
+  }
+}

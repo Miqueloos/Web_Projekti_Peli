@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tunnista eläin</title>
+  <link rel="stylesheet" href="/Elaimentunnistus/tyyli.css" />
+  <script src="/Elaimentunnistus/elaintunnistus.js"></script>
+
+
+</head>
+
+<body>
+
+<header class="header">
+  <div class="title">Tiimi 3 - pelit</div>
+  <nav class="nav">
+    <a href="etusivu.html">Etusivu</a>
+    <a href="/Infosivu/info.html">Info</a>
+    <a href="#">Pelien pisteet</a>
+  </nav>
+
+  <div class="dropdown">
+    <button class="dropbtn">Pelit</button>
+    <div class="dropdown-content">
+      <a href="#">Aakkoset järjestykseen</a>
+      <a href="#">Englannin alkeita</a>
+      <a href="#">Matikka -peli</a>
+      <a href="/Mita_kello_on/Kello.html">Mitä kello on?</a>
+      <a href="/Elaimentunnistus/Tunnistaelain.html">Tunnista eläin</a>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <section class="game-box">
+    <h2 class="game-title">Tunnista eläin</h2>
+
+    <div class="animal-row">
+      <div class="animal-card">
+        <img class="animal-img" src="/Elaimentunnistus/images/Koira.jpg" alt="Koira" />
+        <select id="koira" class="animal-select">
+          <option value="">Valitse eläin</option>
+          <option value="koira">Koira</option>
+          <option value="kissa">Kissa</option>
+          <option value="hevonen">Hevonen</option>
+        </select>
+        <p id="koiraTulos" class="animal-result"></p>
+      </div>
+
+      <div class="animal-card">
+        <img class="animal-img" src="/Elaimentunnistus/images/Kissa.jpg" alt="Kissa" />
+        <select id="kissa" class="animal-select">
+          <option value="">Valitse eläin</option>
+          <option value="koira">Koira</option>
+          <option value="kissa">Kissa</option>
+          <option value="hevonen">Hevonen</option>
+        </select>
+        <p id="kissaTulos" class="animal-result"></p>
+      </div>
+
+      <div class="animal-card">
+        <img class="animal-img" src="/Elaimentunnistus/images/Hevonen.jpg" alt="Hevonen" />
+        <select id="hevonen" class="animal-select">
+          <option value="">Valitse eläin</option>
+          <option value="koira">Koira</option>
+          <option value="kissa">Kissa</option>
+          <option value="hevonen">Hevonen</option>
+        </select>
+        <p id="hevonenTulos" class="animal-result"></p>
+      </div>
+    </div>
+
+    <button class="check-btn" onclick="tarkistaElainpeli()">Tarkista</button>
+
+    <p class="points">Pisteet: <span id="score">0</span></p>
+    <p id="result" class="summary"></p>
+  </section>
+</main>
+
+<script src="jscode.js"></script>
+
+<footer class="footer">footer - Tiimi 3</footer>
+
+</body>
+</html>
