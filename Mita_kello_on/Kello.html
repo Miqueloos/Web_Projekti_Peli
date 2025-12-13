@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiimi 3 -pelit</title>
+    <link rel="stylesheet" href="/Mita_kello_on/styles.css" />
+</head>
+
+<body>
+
+<header class="header">
+    <div class="title">Tiimi 3 - pelit</div>
+    <nav class="nav">
+        <a href="etusivu.html">Etusivu</a>
+        <a href="/Infosivu/info.html">Info</a>
+        <a href="#">Pelien pisteet</a>
+    </nav>
+
+    <div class="dropdown">
+        <button class="dropbtn">Pelit</button>
+        <div class="dropdown-content">
+            <a href="#">Aakkoset järjestykseen</a>
+            <a href="#">Englannin alkeita</a>
+            <a href="#">Matikka -peli</a>
+            <a href="/Mita_kello_on/Kello.html">Mitä kello on?</a>
+            <a href="#">Tunnista eläin</a>
+        </div>
+    </div>
+</header>
+
+<div class="content">
+    <h2>Mitä kello on?</h2>
+
+    <img id="clockimage" src="images/04_00.jpg" alt="Clock">
+
+    <button onclick="changeClock()" class="option">Vaihda kuva</button>
+    <p>Pisteet: <span id="score">0</span></p>
+
+    <div id="question">
+    <p>Mitä aikaa kello näyttää?</p>
+    <div id="options"></div>
+    <button onclick="checkAnswer()" class="option">Tarkista</button>   
+    </div>
+
+    <p id="result"></p>
+</div>
+    <script src="script.js"></script>
+
+    <footer class="footer">footer - Tiimi 3</footer>
+
+</body>
+</html>
