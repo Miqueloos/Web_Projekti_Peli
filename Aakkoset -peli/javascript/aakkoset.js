@@ -107,9 +107,11 @@ return;
 if (placed.join("") === correct.join("")) {
 message.textContent = "Hyvä, järjestit kirjaimet oikein, hienoa! :) ";
 message.style.color = "lightgreen";
+localStorage.setItem("Pisteet_aakkoset", "Oikein");
 } else {
 message.textContent = "Ei ihan oikein, yritä vielä uudelleen!";
 message.style.color = "red";
+localStorage.setItem("Pisteet_aakkoset", "Ei mennyt läpi");
 }
 }
 

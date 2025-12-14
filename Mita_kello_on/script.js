@@ -52,6 +52,7 @@ function checkAnswer() {
             result.textContent="Oikein"
             score++
             document.getElementById("score").textContent=score
+            localStorage.setItem("pisteet_kello", score);
         }
 
         else{

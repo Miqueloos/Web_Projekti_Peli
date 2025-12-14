@@ -30,5 +30,5 @@ function tarkistaElainpeli() {
     document.getElementById("result").textContent =
         "Sait " + pisteet + " / 3 oikein.";
 
-    localStorage.setItem("elainpeliPisteet", pisteet);
+    localStorage.setItem("pisteet_elaimet", pisteet);
 }
