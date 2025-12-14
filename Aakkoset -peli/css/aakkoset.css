@@ -1,4 +1,13 @@
 
+.aakkos {
+    width: 150px;
+    height: 150px;
+    display: block;
+    border-radius: 8px;
+    align-items: center;
+    margin: 0 auto;
+}
+
 /* Pelin pääkontti taustoilla, rajauksilla ja keskityksellä */
 
 .game-container {
