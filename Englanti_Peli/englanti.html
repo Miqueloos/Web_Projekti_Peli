@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<title>Englannin alkeet - peli</title>
+<link rel="stylesheet" href="/Englanti_Peli/englanti.css">
+<script src="/Englanti_Peli/englanti.js" defer></script>
+</head>
+
+<body>
+
+<!-- Navigointi -->
+<header class="header">
+    <div class="title">Tiimi 3 - pelit</div>
+
+    <nav class="nav">
+        <a href="etusivu.html">Etusivu</a>
+        <a href="#">Info</a>
+        <a href="/Pisteet/pisteet.html">Pelien pisteet</a> 
+    </nav>
+
+    <div class="dropdown">
+        <button class="dropbtn">Pelit</button>
+        <div class="dropdown-content">
+            <a href="/Aakkoset -peli/aakkoset.html">Aakkoset järjestykseen</a>
+            <a href="/Englanti_Peli/englanti.html">Englannin alkeita</a>
+            <a href="#">Matikka -peli</a>
+            <a href="/Mita_kello_on/Kello.html">Mitä kello on?</a>
+            <a href="#">Tunnista eläin</a>
+        </div>
+    </div>
+</header>
+
+
+<!-- PELI -->
+<div class="game-box" id="gameBox">
+    <h2 class="game-box-title">Englannin alkeet</h2>
+
+    <div class="question" id="question">Ladataan kysymystä...</div>
+
+    <input type="text" id="answerInput" placeholder="Kirjoita vastaus...">
+    <button onclick="checkAnswer()">Vastaa</button>
+
+    <div class="feedback" id="feedback"></div>
+    <div class="score" id="score">Pisteet: 0</div>
+</div>
+
+<!-- Lopputulos -->
+<div class="result-box" id="resultBox"></div>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+    Footer - Tiimi 3
+</footer>
+</body>
+</html>
